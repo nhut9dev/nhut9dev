@@ -39,6 +39,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Header />
+					<div>alo</div>
 					{children}
 					<Footer />
 				</ThemeProvider>
