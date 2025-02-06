@@ -2,7 +2,7 @@
 
 import { APP_NAME } from '@constants/global';
 
-const Footer = () => {
+export default function Footer() {
 	return (
 		<footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6">
 			<div className="container mx-auto text-center">
@@ -17,6 +17,4 @@ const Footer = () => {
 			</div>
 		</footer>
 	);
-};
-
-export default Footer;
+}

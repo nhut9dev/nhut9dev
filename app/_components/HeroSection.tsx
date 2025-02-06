@@ -11,8 +11,8 @@ const TEXT = {
 };
 export default function HeroSection() {
 	return (
-		<section className="flex flex-col items-center justify-center text-center py-20 px-4 h-full w-full transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white">
-			<div className="flex flex-col items-center  justify-center text-center w-full bg-gray-2">
+		<section className="flex flex-col items-center justify-center text-center py-20 px-4 h-[80vh] w-full transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white">
+			<div className="flex flex-col items-center justify-center text-center w-full bg-gray-2">
 				<motion.h1
 					className="text-4xl md:text-6xl font-bold text-red-600 dark:text-red-500"
 					initial={{ opacity: 0, y: -20 }}

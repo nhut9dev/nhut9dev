@@ -1,9 +1,13 @@
-import HeroSection from '@/app/HeroSection';
+import HeroSection from '@/app/_components/HeroSection';
+import Contact from '@components/Contact/page';
 
 export default function Home() {
 	return (
-		<div className="h-full w-full flex justify-center items-center">
+		<>
 			<HeroSection />
-		</div>
+			<section className=" flex justify-center items-center border-b min-h-20 h-[15vh] border-gray-300">
+				<Contact />
+			</section>
+		</>
 	);
 }

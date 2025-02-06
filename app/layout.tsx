@@ -1,5 +1,5 @@
-import Footer from '@/app/Footer';
-import Header from '@/app/Header';
+import Footer from '@/app/_components/Footer';
+import Header from '@/app/_components/Header';
 import { ThemeProvider } from '@components/theme-provider';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -39,8 +39,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Header />
-					<div>alo</div>
-					{children}
+					<main>{children}</main>
 					<Footer />
 				</ThemeProvider>
 			</body>

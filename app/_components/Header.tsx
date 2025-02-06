@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/config/routes';
 import { ModeToggle } from '@components/ModeToggle';
 import { Button } from '@components/ui/button';
 import { APP_NAME } from '@constants/global';
@@ -9,19 +10,19 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navLinks = [
-	{ name: 'Home', href: '/' },
-	{ name: 'Categories', href: '/categories' },
-	{ name: 'About', href: '/about' },
-	{ name: 'Contact', href: '/contact' },
+	{ name: 'Home', href: ROUTES.CLIENT.HOME },
+	{ name: 'Categories', href: ROUTES.CLIENT.CATEGORIES },
+	{ name: 'About', href: ROUTES.CLIENT.ABOUT },
+	{ name: 'Contact', href: ROUTES.CLIENT.CONTACT },
 ];
 
-const Header = () => {
+export default function Header() {
 	const pathname = usePathname();
 
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className="fixed top-0 left-0 w-full bg-white dark:bg-black border-b-2 border-red-600 p-4 z-50">
+		<header className="sticky top-0 left-0 w-full bg-white dark:bg-black border-b-2 border-red-600 p-4 z-50">
 			<div className="container mx-auto flex justify-between items-center">
 				<div className="flex items-center space-x-4">
 					<Link href="/" className="text-2xl font-bold dark:text-white">
@@ -82,6 +83,4 @@ const Header = () => {
 			)}
 		</header>
 	);
-};
-
-export default Header;
+}
