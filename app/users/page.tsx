@@ -26,7 +26,7 @@ export default function UsersPage() {
 	}, []);
 
 	return (
-		<div className="h-full w-full flex flex-col items-center justify-center gap-5">
+		<div className="flex flex-col items-center justify-center w-full h-full gap-5">
 			<h1 className="text-2xl font-bold">User List</h1>
 			{loading ? (
 				<p>Loading...</p>

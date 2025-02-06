@@ -12,9 +12,9 @@ const TEXT = {
 export default function HeroSection() {
 	return (
 		<section className="flex flex-col items-center justify-center text-center py-20 px-4 h-[80vh] w-full transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white">
-			<div className="flex flex-col items-center justify-center text-center w-full bg-gray-2">
+			<div className="flex flex-col items-center justify-center w-full text-center bg-gray-2">
 				<motion.h1
-					className="text-4xl md:text-6xl font-bold text-red-600 dark:text-red-500"
+					className="text-4xl font-bold text-red-600 md:text-6xl dark:text-red-500"
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
@@ -23,7 +23,7 @@ export default function HeroSection() {
 					{TEXT.TITLE}
 				</motion.h1>
 				<motion.p
-					className="mt-4 text-lg max-w-2xl transition-colors duration-300"
+					className="max-w-2xl mt-4 text-lg transition-colors duration-300"
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.2 }}
@@ -32,19 +32,19 @@ export default function HeroSection() {
 					{TEXT.DESCRIPTION}
 				</motion.p>
 				<motion.div
-					className="mt-6 flex gap-4"
+					className="flex gap-4 mt-6"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5, delay: 0.4 }}
 				>
 					<Button
-						className="px-6 py-3 text-lg bg-red-500 hover:bg-red-600 text-white"
+						className="px-6 py-3 text-lg text-white bg-red-500 hover:bg-red-600"
 						variant="default"
 					>
 						Đọc bài viết
 					</Button>
 					<Button
-						className="px-6 py-3 text-lg border border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+						className="px-6 py-3 text-lg text-red-500 border border-red-500 hover:bg-red-500 hover:text-white"
 						variant="outline"
 					>
 						Về tôi

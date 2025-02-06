@@ -29,14 +29,14 @@ const socialLinks = [
 
 export default function Contact() {
 	return (
-		<div className="h-full flex justify-center items-center">
-			<ul className="flex justify-center items-center space-x-4">
+		<div className="flex items-center justify-center h-full">
+			<ul className="flex items-center justify-center space-x-4">
 				{socialLinks.map(({ icon: Icon, name, url, color }) => (
 					<li key={name} className="relative group">
 						<a
 							href={url}
 							aria-label={name}
-							className="relative flex justify-center items-center w-12 h-12 rounded-full text-gray-700 bg-white shadow-lg transition-transform duration-300 hover:scale-105 overflow-hidden"
+							className="relative flex items-center justify-center w-12 h-12 overflow-hidden text-gray-700 transition-transform duration-300 bg-white rounded-full shadow-lg hover:scale-105"
 						>
 							<div
 								className={`absolute bottom-0 left-0 w-full h-0 ${color} transition-all duration-300 group-hover:h-full`}

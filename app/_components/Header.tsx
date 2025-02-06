@@ -22,14 +22,14 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className="sticky top-0 left-0 w-full bg-white dark:bg-black border-b-2 border-red-600 p-4 z-50">
-			<div className="container mx-auto flex justify-between items-center">
+		<header className="sticky top-0 left-0 z-50 w-full p-4 bg-white border-b-2 border-red-600 dark:bg-black">
+			<div className="container flex items-center justify-between mx-auto">
 				<div className="flex items-center space-x-4">
 					<Link href="/" className="text-2xl font-bold dark:text-white">
 						{APP_NAME}
 					</Link>
 
-					<nav className="hidden md:flex space-x-6">
+					<nav className="hidden space-x-6 md:flex">
 						{navLinks.map((link) => (
 							<Link
 								key={link.name}
@@ -68,7 +68,7 @@ export default function Header() {
 			</div>
 
 			{isOpen && (
-				<nav className="mt-2 md:hidden shadow-lg p-4 flex flex-col gap-4">
+				<nav className="flex flex-col gap-4 p-4 mt-2 shadow-lg md:hidden">
 					{navLinks.map((link) => (
 						<Link
 							key={link.name}

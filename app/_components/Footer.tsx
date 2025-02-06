@@ -4,12 +4,12 @@ import { APP_NAME } from '@constants/global';
 
 export default function Footer() {
 	return (
-		<footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6">
+		<footer className="py-6 text-gray-700 bg-gray-100 dark:bg-gray-900 dark:text-gray-300">
 			<div className="container mx-auto text-center">
 				<p>
 					&copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
 				</p>
-				<div className="flex justify-center space-x-6 mt-4">
+				<div className="flex justify-center mt-4 space-x-6">
 					{/* <Link href="/contact" className="hover:text-blue-500">
 						Contact
 					</Link> */}
