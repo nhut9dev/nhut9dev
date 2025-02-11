@@ -1,4 +1,5 @@
 import { Post } from '@/models/Post';
+import { Tag } from '@/models/Tag';
 import { NextResponse } from 'next/server';
 
 import { connectDB } from '@/lib/mongoose';
@@ -40,6 +41,25 @@ export async function POST(req: Request) {
 			);
 		}
 
+		const tagIds = [];
+
+		if (tags && tags.length > 0) {
+			for (const tagName of tags) {
+				let tag = await Tag.findOne({ name: tagName });
+
+				if (!tag) {
+					// 🆕 Nếu tag chưa tồn tại -> Tạo tag mới
+					tag = new Tag({
+						name: tagName,
+						slug: tagName.toLowerCase().replace(/\s+/g, '-'),
+					});
+					await tag.save();
+				}
+
+				tagIds.push(tag._id); // Lưu ID của tag
+			}
+		}
+
 		const newPost = new Post({
 			title,
 			slug,
@@ -48,16 +68,18 @@ export async function POST(req: Request) {
 			coverImage,
 			author,
 			categories,
-			tags,
+			tags: tagIds,
 			status,
 		});
+
 		await newPost.save();
 
 		return NextResponse.json(
-			{ message: 'Post added', post: newPost },
+			{ message: 'Post created', post: newPost },
 			{ status: 201 },
 		);
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return NextResponse.json({ error: 'Error adding post' }, { status: 500 });
 	}
 }
