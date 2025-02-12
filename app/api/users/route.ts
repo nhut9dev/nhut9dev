@@ -1,43 +1,21 @@
-import { User } from '@/models/User';
 import { NextResponse } from 'next/server';
 
-import { connectDB } from '@/lib/mongoose';
+import { connectDB } from '@lib/mongoose';
+import User from '@models/User';
 
-// Lấy danh sách user (GET)
 export async function GET() {
-	try {
-		await connectDB();
-		const users = await User.find();
-		return NextResponse.json({ users }, { status: 200 });
-	} catch {
-		return NextResponse.json(
-			{ error: 'Internal Server Error' },
-			{ status: 500 },
-		);
-	}
+	await connectDB();
+	const users = await User.find();
+	return NextResponse.json(users, { status: 200 });
 }
 
-// Thêm user mới (POST)
-export async function POST(req: Request) {
+export async function POST(req: any) {
+	await connectDB();
+	const data = await req.json();
 	try {
-		await connectDB();
-		const { name, email } = await req.json();
-
-		if (!name || !email) {
-			return NextResponse.json(
-				{ error: 'Missing name or email' },
-				{ status: 400 },
-			);
-		}
-
-		const newUser = new User({ name, email });
-		await newUser.save();
-
-		return NextResponse.json(
-			{ message: 'User added', user: newUser },
-			{ status: 201 },
-		);
-	} catch {
-		return NextResponse.json({ error: 'Error adding user' }, { status: 500 });
+		const user = await User.create(data);
+		return NextResponse.json(user, { status: 201 });
+	} catch (error: any) {
+		return NextResponse.json({ message: error.message }, { status: 400 });
 	}
 }

@@ -1,7 +1,7 @@
-import { Comment } from '@/models/Comment';
 import { NextResponse } from 'next/server';
 
-import { connectDB } from '@/lib/mongoose';
+import { connectDB } from '@lib/mongoose';
+import { Comment } from '@models/Comment';
 
 // 🟢 Lấy một comment theo ID (GET)
 export async function GET(

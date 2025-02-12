@@ -5,10 +5,11 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import 'react-markdown-editor-lite/lib/index.css';
 
+import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
+import { Input } from '@components/ui/input';
+import { Textarea } from '@components/ui/textarea';
+
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 
 // Import Markdown Editor Lite (dùng dynamic import để tránh lỗi SSR)
 const MdEditor = dynamic(() => import('react-markdown-editor-lite'), {

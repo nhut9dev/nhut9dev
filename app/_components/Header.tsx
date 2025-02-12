@@ -1,13 +1,14 @@
 'use client';
 
-import { ROUTES } from '@/config/routes';
-import { ModeToggle } from '@components/ModeToggle';
-import { Button } from '@components/ui/button';
-import { APP_NAME } from '@constants/global';
 import { Facebook, Instagram, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+
+import { ModeToggle } from '@components/ModeToggle';
+import { Button } from '@components/ui/button';
+import { ROUTES } from '@config/routes';
+import { APP_NAME } from '@constants/global';
 
 const navLinks = [
 	{ name: 'Home', href: ROUTES.CLIENT.HOME },

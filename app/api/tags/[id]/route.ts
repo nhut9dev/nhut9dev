@@ -1,7 +1,7 @@
-import { Tag } from '@/models/Tag';
 import { NextResponse } from 'next/server';
 
-import { connectDB } from '@/lib/mongoose';
+import { connectDB } from '@lib/mongoose';
+import { Tag } from '@models/Tag';
 
 // 🟢 Lấy một tag theo ID (GET)
 export async function GET(

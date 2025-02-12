@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { getAllPosts } from '@/lib/apis/post';
+import { getAllPosts } from '@lib/apis/post';
 
 export default async function BlogListPage() {
 	const posts = await getAllPosts(); // Fetch danh sách bài viết

@@ -1,4 +1,4 @@
-import HeroSection from '@/app/_components/HeroSection';
+import HeroSection from '@app/_components/HeroSection';
 import Contact from '@components/Contact/page';
 
 export default function Home() {

@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import PostEditor from '@/components/PostEditor';
+import PostEditor from '@components/PostEditor';
 
 export default function EditPostPage() {
 	const { id } = useParams();

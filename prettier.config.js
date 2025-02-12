@@ -12,8 +12,8 @@ module.exports = {
 	plugins: ['@trivago/prettier-plugin-sort-imports'],
 	importOrder: [
 		'<THIRD_PARTY_MODULES>',
-		'^@biso24',
-		'^@/(components|constants|hooks|stores|lib|utils)',
+		'^@(app|components|config|constants|hooks|lib|models|scripts|stores|utils)',
+		'^[@/]',
 		'^[./]',
 	],
 	importOrderSeparation: true,

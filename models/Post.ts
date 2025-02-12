@@ -1,5 +1,6 @@
-import { PostStatus } from '@/models/enums';
 import { Schema, model, models } from 'mongoose';
+
+import { PostStatus } from '@models/enums';
 
 const PostSchema = new Schema(
 	{

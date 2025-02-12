@@ -1,8 +1,8 @@
 // Hàm lấy bài viết theo slug
-import { getPostBySlug } from '@lib/apis/post';
 import { notFound } from 'next/navigation';
 
-import PostView from '@/components/PostView';
+import PostView from '@components/PostView';
+import { getPostBySlug } from '@lib/apis/post';
 
 export default async function BlogPostPage({
 	params,

@@ -1,8 +1,8 @@
-import { Post } from '@/models/Post';
-import { Tag } from '@/models/Tag';
 import { NextResponse } from 'next/server';
 
-import { connectDB } from '@/lib/mongoose';
+import { connectDB } from '@lib/mongoose';
+import { Post } from '@models/Post';
+import { Tag } from '@models/Tag';
 
 // 🟢 Lấy danh sách bài viết (GET)
 export async function GET() {

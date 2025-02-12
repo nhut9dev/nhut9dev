@@ -18,10 +18,15 @@
 			}
 		],
 		"paths": {
+			"@app/*": ["./app/*"],
 			"@components/*": ["./components/*"],
+			"@config/*": ["./config/*"],
 			"@constants/*": ["./constants/*"],
 			"@hooks/*": ["./hooks/*"],
 			"@lib/*": ["./lib/*"],
+			"@models/*": ["./models/*"],
+			"@scripts/*": ["./scripts/*"],
+			"@stores/*": ["./stores/*"],
 			"@/*": ["./*"]
 		}
 	},

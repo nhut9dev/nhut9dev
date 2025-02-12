@@ -1,7 +1,7 @@
-import { Post } from '@/models/Post';
 import { NextResponse } from 'next/server';
 
-import { connectDB } from '@/lib/mongoose';
+import { connectDB } from '@lib/mongoose';
+import { Post } from '@models/Post';
 
 // 🟢 Lấy một bài viết theo ID (GET)
 export async function GET(

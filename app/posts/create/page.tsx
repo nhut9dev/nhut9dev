@@ -1,6 +1,6 @@
 'use client';
 
-import PostEditor from '@/components/PostEditor';
+import PostEditor from '@components/PostEditor';
 
 export default function CreatePostPage() {
 	const handleSave = async (postData: any) => {

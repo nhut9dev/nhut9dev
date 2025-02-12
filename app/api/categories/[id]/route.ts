@@ -1,7 +1,7 @@
-import { Category } from '@/models/Category';
 import { NextResponse } from 'next/server';
 
-import { connectDB } from '@/lib/mongoose';
+import { connectDB } from '@lib/mongoose';
+import { Category } from '@models/Category';
 
 // 🟢 Lấy một category theo ID (GET)
 export async function GET(

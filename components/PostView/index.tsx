@@ -2,7 +2,7 @@
 
 import MarkdownIt from 'markdown-it';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
 
 const mdParser = new MarkdownIt({
 	html: true, // Hỗ trợ HTML trong Markdown

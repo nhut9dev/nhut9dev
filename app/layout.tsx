@@ -1,8 +1,9 @@
-import Footer from '@/app/_components/Footer';
-import Header from '@/app/_components/Header';
-import { ThemeProvider } from '@components/theme-provider';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+
+import Footer from '@app/_components/Footer';
+import Header from '@app/_components/Header';
+import { ThemeProvider } from '@components/theme-provider';
 
 import './globals.css';
 

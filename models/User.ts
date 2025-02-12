@@ -1,15 +1,13 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose from 'mongoose';
 
-export interface IUser extends Document {
-	name: string;
-	email: string;
-}
+const UserSchema = new mongoose.Schema(
+	{
+		name: { type: String, required: true },
+		email: { type: String, required: true, unique: true },
+		avatar: { type: String, default: '' },
+		role: { type: String, enum: ['admin', 'author', 'user'], default: 'user' },
+	},
+	{ timestamps: true },
+);
 
-const UserSchema: Schema = new Schema({
-	name: { type: String, required: true },
-	email: { type: String, required: true, unique: true },
-});
-
-// Tránh đăng ký lại model nhiều lần
-export const User =
-	mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
+export default mongoose.models.User || mongoose.model('User', UserSchema);

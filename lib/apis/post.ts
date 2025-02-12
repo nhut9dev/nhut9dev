@@ -1,5 +1,5 @@
-import { Post } from '@/models/Post';
 import { connectDB } from '@lib/mongoose';
+import { Post } from '@models/Post';
 
 export async function getPostBySlug(slug: string) {
 	await connectDB();
