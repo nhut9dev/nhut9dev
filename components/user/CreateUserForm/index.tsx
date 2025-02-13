@@ -19,20 +19,21 @@ export default function CreateUserForm() {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
+		password: '',
 		avatar: '',
 		role: 'user',
 	});
 	const [loading, setLoading] = useState(false);
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
-	const handleRoleChange = (value) => {
+	const handleRoleChange = (value: any) => {
 		setFormData({ ...formData, role: value });
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 		setLoading(true);
 
@@ -45,7 +46,13 @@ export default function CreateUserForm() {
 		setLoading(false);
 
 		if (res.ok) {
-			setFormData({ name: '', email: '', avatar: '', role: 'user' });
+			setFormData({
+				name: '',
+				email: '',
+				password: '',
+				avatar: '',
+				role: 'user',
+			});
 			toast({
 				title: 'User created successfully!',
 				description: 'The new user has been added.',
@@ -81,6 +88,17 @@ export default function CreateUserForm() {
 						name="email"
 						type="email"
 						value={formData.email}
+						onChange={handleChange}
+						required
+					/>
+				</div>
+				<div>
+					<Label htmlFor="password">Password</Label>
+					<Input
+						id="password"
+						name="password"
+						type="password"
+						value={formData.password}
 						onChange={handleChange}
 						required
 					/>
