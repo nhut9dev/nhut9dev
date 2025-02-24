@@ -18,7 +18,18 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
+      "@ui/*": ["./src/components/ui/*"],
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@models/*": ["./src/models/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@store/*": ["./src/store/*"],
+      "@api/*": ["./src/lib/api/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@app/*": ["./src/app/*"],
       "@/*": ["./src/*"]
     }
   },
