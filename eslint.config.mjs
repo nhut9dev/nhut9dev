@@ -11,13 +11,19 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
-  ...compat.plugins('prettier'),
+  ...compat.plugins('prettier', 'unused-imports'),
   {
     rules: {
-      semi: ['error', 'always'], // Luôn có dấu chấm phẩy
-      quotes: ['error', 'single'], // Dùng dấu nháy đơn thay vì nháy kép
-      'no-console': 'warn', // Cảnh báo nếu dùng console.log
+      semi: ['error', 'always'],
+      quotes: ['error', 'single'],
+      'no-console': 'warn',
       'prettier/prettier': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'unused-imports/no-unused-imports': 'warn',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+      ],
     },
   },
 ];
