@@ -1,6 +1,6 @@
-import { IUser } from '@/types/user';
-import { connectDB } from '@lib/db';
-import User from '@models/User';
+import { connectDB } from '~lib/db';
+import User from '~models/User';
+import { IUser } from '~types/user';
 
 export async function findUserByEmail(email: string): Promise<IUser | null> {
   await connectDB();

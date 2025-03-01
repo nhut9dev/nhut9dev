@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { removeRefreshToken } from '@lib/apis/auth';
+import { removeRefreshToken } from '~api/auth';
 
 export async function POST(req: Request) {
   const { refreshToken } = await req.json();

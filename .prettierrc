@@ -6,10 +6,10 @@
   "printWidth": 100,
   "endOfLine": "auto",
 
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "plugins": [ "@trivago/prettier-plugin-sort-imports" ],
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
-    "^@(api|app|assets|components|constants|hooks|lib|models|store|/)",
+    "^~(api|app|assets|components|constants|hooks|lib|models|store|utils|types)/",
     "^[./]"
   ],
   "importOrderSeparation": true,

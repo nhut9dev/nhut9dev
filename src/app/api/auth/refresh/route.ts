@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
-import User from '@/models/User';
-import { generateAccessToken, verifyToken } from '@lib/auth-utils';
-import { connectDB } from '@lib/db';
+import { connectDB } from '~lib/db';
+import User from '~models/User';
+import { generateAccessToken, verifyToken } from '~utils/auth';
 
 export async function POST(req: Request) {
   try {

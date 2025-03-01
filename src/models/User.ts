@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-import { IUser } from '@/types/user';
+import { IUser } from '~types/user';
 
 type IUserModel = IUser & Document;
 

@@ -2,8 +2,8 @@ import NextAuth, { NextAuthOptions, Session, User } from 'next-auth';
 import { JWT } from 'next-auth/jwt';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-import { findUserByEmail } from '@lib/apis/auth';
-import { generateAccessToken, generateRefreshToken } from '@lib/auth-utils';
+import { findUserByEmail } from '~api/auth';
+import { generateAccessToken, generateRefreshToken } from '~utils/auth';
 
 async function authorize(credentials: Record<string, string> | undefined): Promise<User | null> {
   if (!credentials?.email || !credentials?.password) return null;
