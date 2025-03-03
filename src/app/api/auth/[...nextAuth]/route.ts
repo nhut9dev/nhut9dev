@@ -20,7 +20,7 @@ async function authorize(credentials: Record<string, string> | undefined): Promi
   };
 }
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   session: { strategy: 'jwt' },
   providers: [
     CredentialsProvider({
